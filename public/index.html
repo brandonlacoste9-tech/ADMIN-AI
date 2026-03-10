@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADMIN-AI &mdash; Agentic Admin Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">ADMIN-AI</span>
+      </div>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">&#9776;</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-view="chat">
+        <span class="nav-icon">💬</span>
+        <span class="nav-label">Chat</span>
+      </button>
+      <button class="nav-item" data-view="tasks">
+        <span class="nav-icon">✅</span>
+        <span class="nav-label">Tasks</span>
+      </button>
+      <button class="nav-item" data-view="notes">
+        <span class="nav-icon">📝</span>
+        <span class="nav-label">Notes</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="btn-secondary" id="newChatBtn">
+        <span>+</span> New Chat
+      </button>
+      <div class="session-info" id="sessionInfo">Session active</div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main" id="main">
+    <!-- Chat view -->
+    <section class="view active" id="view-chat">
+      <div class="chat-header">
+        <div class="chat-title">
+          <span class="status-dot" id="statusDot"></span>
+          <h1>ADMIN-AI Assistant</h1>
+        </div>
+        <div class="chat-actions">
+          <button class="btn-icon" id="clearChatBtn" title="Clear conversation">🗑️</button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="welcome-screen">
+          <div class="welcome-icon">🤖</div>
+          <h2>Welcome to ADMIN-AI</h2>
+          <p>Your intelligent agentic admin assistant. I can help you with:</p>
+          <div class="capability-grid">
+            <div class="capability-card" data-prompt="Show me all my current tasks">
+              <span class="cap-icon">✅</span>
+              <span class="cap-title">Task Management</span>
+              <span class="cap-desc">Create, update, and track tasks</span>
+            </div>
+            <div class="capability-card" data-prompt="Create a note about the team meeting agenda">
+              <span class="cap-icon">📝</span>
+              <span class="cap-title">Notes</span>
+              <span class="cap-desc">Save and organize important notes</span>
+            </div>
+            <div class="capability-card" data-prompt="How do I reset a user's password?">
+              <span class="cap-icon">🔍</span>
+              <span class="cap-title">Knowledge Base</span>
+              <span class="cap-desc">Find admin how-to guides</span>
+            </div>
+            <div class="capability-card" data-prompt="What is 15% of 3500?">
+              <span class="cap-icon">🧮</span>
+              <span class="cap-title">Calculator</span>
+              <span class="cap-desc">Compute values and percentages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="messageInput"
+            placeholder="Ask ADMIN-AI anything..."
+            rows="1"
+            aria-label="Message input"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" aria-label="Send message" disabled>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">ADMIN-AI can make mistakes. Verify important information.</p>
+      </div>
+    </section>
+
+    <!-- Tasks view -->
+    <section class="view" id="view-tasks">
+      <div class="view-header">
+        <h1>Tasks</h1>
+        <p class="view-subtitle">Managed by ADMIN-AI. Ask the assistant to add, update, or delete tasks.</p>
+      </div>
+      <div class="task-placeholder">
+        <div class="placeholder-icon">✅</div>
+        <p>Use the chat to manage your tasks.</p>
+        <button class="btn-primary" data-prompt="Show me all my tasks" data-view-switch="chat">
+          Open Chat
+        </button>
+      </div>
+    </section>
+
+    <!-- Notes view -->
+    <section class="view" id="view-notes">
+      <div class="view-header">
+        <h1>Notes</h1>
+        <p class="view-subtitle">Managed by ADMIN-AI. Ask the assistant to create or retrieve notes.</p>
+      </div>
+      <div class="task-placeholder">
+        <div class="placeholder-icon">📝</div>
+        <p>Use the chat to manage your notes.</p>
+        <button class="btn-primary" data-prompt="List all my notes" data-view-switch="chat">
+          Open Chat
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

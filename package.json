@@ -1,0 +1,38 @@
+{
+  "name": "admin-ai",
+  "version": "1.0.0",
+  "description": "ADMIN ASSISTANT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "jest --testTimeout=10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonlacoste9-tech/ADMIN-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brandonlacoste9-tech/ADMIN-AI/issues"
+  },
+  "homepage": "https://github.com/brandonlacoste9-tech/ADMIN-AI#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "openai": "^6.27.0"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
