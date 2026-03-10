@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useApp } from '@/components/AppContext';
-import { calComClient, mockAppointments } from '@/lib/supabase';
+import { calComClient } from '@/lib/calcom';
+import { mockAppointments } from '@/lib/supabase';
 import { Calendar, Clock, User, Mail, Phone, FileText, CheckCircle, Loader2 } from 'lucide-react';
 
 interface Service {
