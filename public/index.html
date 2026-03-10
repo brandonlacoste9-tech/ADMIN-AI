@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADMIN-AI Assistant</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">🤖</span>
+          <span class="logo-text">ADMIN-AI</span>
+        </div>
+        <p class="tagline">Your Agentic Admin Assistant</p>
+      </div>
+
+      <nav class="capabilities">
+        <h3>Capabilities</h3>
+        <ul>
+          <li>📅 Date &amp; time queries</li>
+          <li>📝 Note management</li>
+          <li>✅ Task tracking</li>
+          <li>🧮 Calculations</li>
+          <li>🔍 Web search</li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="clear-btn" class="btn-secondary" title="Start a new conversation">
+          🗑️ New conversation
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="chat-area">
+      <header class="chat-header">
+        <h1>ADMIN-AI <span class="badge">Agentic</span></h1>
+        <div id="status-indicator" class="status idle" title="Status">●</div>
+      </header>
+
+      <div id="messages" class="messages" role="log" aria-live="polite" aria-label="Conversation">
+        <!-- Welcome message -->
+        <div class="message assistant">
+          <div class="avatar">🤖</div>
+          <div class="bubble">
+            <p>Hi! I'm <strong>ADMIN-AI</strong>, your agentic administrative assistant.</p>
+            <p>I can help you with:</p>
+            <ul>
+              <li>📅 Checking the current date and time</li>
+              <li>📝 Creating and managing notes</li>
+              <li>✅ Tracking tasks and to-dos</li>
+              <li>🧮 Performing calculations</li>
+              <li>🔍 Searching the web for information</li>
+            </ul>
+            <p>How can I assist you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing indicator (hidden by default) -->
+      <div id="typing-indicator" class="typing-indicator hidden">
+        <div class="avatar">🤖</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="typing-label">Thinking…</span>
+      </div>
+
+      <form id="chat-form" class="input-area" autocomplete="off">
+        <div class="input-wrapper">
+          <textarea
+            id="message-input"
+            class="message-input"
+            placeholder="Ask me anything… (Shift+Enter for new line)"
+            rows="1"
+            maxlength="4000"
+            aria-label="Message input"
+          ></textarea>
+          <button type="submit" id="send-btn" class="btn-send" aria-label="Send message">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">ADMIN-AI can make mistakes. Verify important information.</p>
+      </form>
+    </main>
+  </div>
+
+  <script src="/js/app.js" type="module"></script>
+</body>
+</html>
